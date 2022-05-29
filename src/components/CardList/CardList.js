@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect }from "react";
 import ItemList from "../ItemList/ItemList";
 // import Item from "../Item/Item";
 // import ItemListContainer from "../ItemListContainer/ItemListContainer";
 
 export const CardList = () => {
 
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const productsItems = [
     {
@@ -60,32 +60,32 @@ export const CardList = () => {
     });
   };
 
-  getProducts(productsItems)
-    .then((res) => {
-      return console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-    .finally(() => console.log("promesa finalizada"));
+  // getProducts(productsItems)
+  //   .then((res) => {
+  //     return console.log(res);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   })
+  //   .finally(() => console.log("promesa finalizada"));
 
-    // useEffect( () => {
-    //     getProducts()
-    //     .then( (response) => {
-    //         // console.log("Then : Respuesta Promesa: ", response)
-    //         setProducts(response)
-    //     })
-    //     .catch( (err) => {
-    //         // console.log("Catch: Fallo la llamada.", err)
-    //     })
-    //     .finally( () => {
-    //         // console.log("Finally: termino la promesa")
-    //     })
-    // }, [])
+    useEffect( () => {
+        getProducts()
+        .then( (response) => {
+            // console.log("Then : Respuesta Promesa: ", response)
+            setProducts(response)
+        })
+        .catch( (err) => {
+            console.log("Catch: Fallo la llamada.", err)
+        })
+        .finally( () => {
+            console.log("Finally: termino la promesa")
+        })
+    }, [])
 
   return (
     <>
-          <ItemList products={productsItems}/>
+          <ItemList products={products}/>
     </>
   );
 };

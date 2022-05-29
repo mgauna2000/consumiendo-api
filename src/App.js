@@ -2,7 +2,6 @@
 import './App.css';
 import { CardList } from './components/CardList/CardList';
 // import Item from './components/Item/Item';
-// import Item from './components/Item/Item';
 // import ItemCount from './components/ItemCount/ItemCount';
 import { Navbar } from './components/Navbar/Navbar';
 
