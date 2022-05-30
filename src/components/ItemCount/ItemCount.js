@@ -18,7 +18,7 @@ const ItemCount = ({stock}) => {
 
   return (
     <>
-      <div className="container m-2">
+      <div className="container m-1">
         <div className="row align-items">
           <div className="col">
             <button className="btn btn-primary" onClick={removeCount}>-</button>

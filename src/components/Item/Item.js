@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import producto from '../../utils/producto'
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = () => {
+
+  useEffect(() => {
+    fetch('../../services/product-services')
+    .then((response) => {
+      return response.json()
+    })
+    .then((res) => {
+      console.log(res)
+    })
+  }, [])
+
   return (
     <div className="container">
-      <div class="row row-cols-1 row-cols-md-3 my-4 g-4 grid">
+      <div className="row row-cols-1 row-cols-md-3 my-4 g-4 grid">
       <div className="card">
           <img src={`./${producto.image}`} className="card-img-top" alt="..." />
           <div className="card-body">
