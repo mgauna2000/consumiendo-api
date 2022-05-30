@@ -20,13 +20,13 @@ const ItemCount = ({stock}) => {
     <>
       <div className="container m-1">
         <div className="row align-items">
-          <div className="col">
+          <div className="col-5">
             <button className="btn btn-primary" onClick={removeCount}>-</button>
           </div>
-          <div className="col">
+          <div className="col-2">
             <p>{count}</p>
           </div>
-          <div className="col">
+          <div className="col-5">
             <button className="btn btn-primary" onClick={addCount}>+</button>
           </div>
         </div>
